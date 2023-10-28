@@ -57,8 +57,14 @@ You may also use the following command. Once you cd to the executable folder, en
 java -cp "RPCSimulation.jar;lib/*" simulation.RPCSimulation
 ```
 If you run into memory problem, adjust the JVM memory settings with "-Xmx" and "-Xms".
-The default setting only runs the simulation for the RPC+ problam variant for one iteration.
-To run all 72 iterations, change the line
+The default setting only runs the simulation for the RPC+ problam variant for one interval.
+To run all 72 intervals, change the line
 ```
-NumberOfIntervals=1 to NumberOfIntervals=72 in the "config.properties" file in the data folder.
+NumberOfIntervals=1 to NumberOfIntervals=72 in the "config.properties" file in the executable/data/ folder.
 ```
+A set of drivers and passengers trips have been generated for one interval and have been included in the executable/data/ folder.
+To run the simulation using these generated trips (without generating trips and matches yourself), change the following lines in "config.properties" as follows:
+```
+LoadGeneratedTrips=False to LoadGeneratedTrips=True
+AlgorithmBaseMatches=True to AlgorithmBaseMatches=False
+AlgorithmAllMatches=True to AlgorithmAllMatches=False
