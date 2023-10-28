@@ -836,8 +836,7 @@ public class SimulationLoader {
         if (Utility.transmitTripDataTo != null)
             if (!Utility.transmitTripData(fileNamePath, slnParamters))
                 return false;
-        if (SimulationParameters.problemVariant == 2 && SimulationParameters.algorithmBaseMatches) {
-        //if (algorithmToExecute == 0 && problemVariant == 2) {
+        if (SimulationParameters.problemVariant == 2 && SimulationParameters.algorithmBaseMatches && && !SimulationParameters.algorithmAllMatches) {
             slnParamters = slnParamters.replace("passengers", "IndexIDMapping");
             fileNamePath = Paths.get(currentPath, DATAFOLDER, tripSubfolder, slnParamters);
             try (DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(fileNamePath.toFile(), false)));
